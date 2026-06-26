@@ -71,6 +71,11 @@ body {
   background: var(--hdbg);
 }
 
+.header .d-flex {
+  display: flex;
+  flex-direction: column;
+}
+
 .logo {
   font-size: 1.25rem;
   font-weight: 700;
@@ -78,10 +83,15 @@ body {
   color: var(--text-color);
   display: flex;
   align-items: center;
+  text-transform: uppercase;
+  line-height: 1.2;
 }
 
-.logo span {
+.logo+span {
   color: var(--primary-color);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
 }
 
 .theme-toggle {

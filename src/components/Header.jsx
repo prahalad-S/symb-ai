@@ -23,10 +23,13 @@ export default function Header({ theme, toggleTheme, session }) {
 
   return (
     <header className="header">
-      <a href="/" className="logo">Symbiosys AI Knowledge Base<span>°</span></a>
+      <div className="d-flex"> <a href="/" className="logo">Symbiosys</a><span>AI Knowledge Base</span></div>
       <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
         {session ? (
-          <button onClick={handleLogout} className="resource-action-btn" style={{ padding: '0.4rem 0.8rem', fontSize: '0.85rem' }}>Logout</button>
+          <>
+            <button onClick={handleLogout} className="resource-action-btn" style={{ padding: '0.4rem 0.8rem', fontSize: '0.85rem' }}>Logout</button>
+            <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>{session.user?.email}</span>
+          </>
         ) : (
           <button onClick={handleLogin} className="resource-action-btn" style={{ padding: '0.4rem 0.8rem', fontSize: '0.85rem' }}>Login</button>
         )}
