@@ -2,10 +2,7 @@ import { supabase } from '../supabaseClient';
 
 export default function Header({ theme, toggleTheme, session }) {
   const getURL = () => {
-    let url =
-      import.meta.env.VITE_SITE_URL ??
-    import.meta.env.VITE_SITE_URL ??
-      'https://symb-ai.vercel.app/'
+    let url = import.meta.env.VITE_SITE_URL ?? 'https://symb-ai.vercel.app/';
     url = url.startsWith('http') ? url : `https://${url}`
     url = url.endsWith('/') ? url : `${url}/`
     return url
