@@ -47,7 +47,23 @@ export function useData() {
     fetchData();
   }, []);
 
-  const isAdmin = session?.user?.email === 'aliaswave7@gmail.com';
+  const getEmailFromToken = (session) => {
+    try {
+      const token = session?.access_token || session?.refresh_token;
+      if (!token) return null;
+      const payload = token.split('.')[1];
+      const decoded = JSON.parse(atob(payload));
+      return decoded?.email || decoded?.user?.email || null;
+    } catch (e) {
+      console.error('Failed to decode JWT', e);
+      return null;
+    }
+  };
+
+  const adminEmails = ['aliaswave7@gmail.com', 'dream3productions@gmail.com'];
+  const email = session?.user?.email || getEmailFromToken(session);
+  const isAdmin = email && adminEmails.includes(email);
+
 
   return { groups, categories, resources, loading, session, isAdmin, refetch: fetchData };
 }
