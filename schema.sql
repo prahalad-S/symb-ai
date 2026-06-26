@@ -58,17 +58,17 @@ DROP POLICY IF EXISTS "Allow admin write-access on resources" ON resources;
 CREATE POLICY "Allow admin write-access on sidebar_groups"
   ON sidebar_groups
   FOR ALL
-  USING (auth.jwt() ->> 'email' = ANY(ARRAY['aliaswave7@gmail.com','dream3productions@gmail.com']))
-  WITH CHECK (auth.jwt() ->> 'email' = ANY(ARRAY['aliaswave7@gmail.com','dream3productions@gmail.com']));
+  USING (auth.jwt() ->> 'email' = ANY(ARRAY['aliaswave7@gmail.com','yasaswinipilla41@gmail.com']))
+  WITH CHECK (auth.jwt() ->> 'email' = ANY(ARRAY['aliaswave7@gmail.com','yasaswinipilla41@gmail.com']));
 
 CREATE POLICY "Allow admin write-access on categories"
   ON categories
   FOR ALL
-  USING (auth.jwt() ->> 'email' = ANY(ARRAY['aliaswave7@gmail.com','dream3productions@gmail.com']))
-  WITH CHECK (auth.jwt() ->> 'email' = ANY(ARRAY['aliaswave7@gmail.com','dream3productions@gmail.com']));
+  USING (auth.jwt() ->> 'email' = ANY(ARRAY['aliaswave7@gmail.com','yasaswinipilla41@gmail.com']))
+  WITH CHECK (auth.jwt() ->> 'email' = ANY(ARRAY['aliaswave7@gmail.com','yasaswinipilla41@gmail.com']));
 
 CREATE POLICY "Allow admin write-access on resources"
   ON resources
   FOR ALL
-  USING (auth.jwt() ->> 'email' = ANY(ARRAY['aliaswave7@gmail.com','dream3productions@gmail.com']))
-  WITH CHECK (auth.jwt() ->> 'email' = ANY(ARRAY['aliaswave7@gmail.com','dream3productions@gmail.com']));
+  USING (auth.jwt() ->> 'email' = ANY(ARRAY['aliaswave7@gmail.com','yasaswinipilla41@gmail.com']))
+  WITH CHECK (auth.jwt() ->> 'email' = ANY(ARRAY['aliaswave7@gmail.com','yasaswinipilla41@gmail.com']));

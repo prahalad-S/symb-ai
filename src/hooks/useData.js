@@ -28,11 +28,11 @@ export function useData() {
         supabase.from('categories').select('*').order('sort_order', { ascending: true }),
         supabase.from('resources').select('*').order('sort_order', { ascending: true })
       ]);
-      
+
       if (gRes.error) throw gRes.error;
       if (cRes.error) throw cRes.error;
       if (rRes.error) throw rRes.error;
-      
+
       setGroups(gRes.data || []);
       setCategories(cRes.data || []);
       setResources(rRes.data || []);
@@ -60,7 +60,7 @@ export function useData() {
     }
   };
 
-  const adminEmails = ['aliaswave7@gmail.com', 'dream3productions@gmail.com'];
+  const adminEmails = ['aliaswave7@gmail.com', 'yasaswinipilla41@gmail.com'];
   const email = session?.user?.email || getEmailFromToken(session);
   const isAdmin = email && adminEmails.includes(email);
 
